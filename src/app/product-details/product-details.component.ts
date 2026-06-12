@@ -26,4 +26,9 @@ export class ProductDetailsComponent {
   getImageUrl(product: IProduct): string {
     return `/images/robot-parts/${product.imageName}`;
   }
+
+  addToCart(product: IProduct, event: MouseEvent): void {
+    product.name += ' (Added to cart)';
+    console.log(event);
+  }
 }
