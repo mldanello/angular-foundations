@@ -30,7 +30,7 @@ export class ProductDetailsComponent {
   }
 
   addToCart(product: IProduct, event: MouseEvent): void {
-    setTimeout(() => this.availableInventory.set(2), 3000 );
+    setTimeout(() => this.availableInventory.update((p) => p - 1), 3000 );
         product.name += ' (Added to cart)';
     console.log(event);
   }
