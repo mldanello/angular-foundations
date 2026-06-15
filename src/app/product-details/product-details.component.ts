@@ -1,6 +1,7 @@
-import { Component } from '@angular/core';
+import { Component, signal } from '@angular/core';
 import { IProduct } from '../product.model';
 import { CurrencyPipe } from '@angular/common';
+
 
 @Component({
   selector: 'bot-product-details',
@@ -10,6 +11,7 @@ import { CurrencyPipe } from '@angular/common';
 })
 export class ProductDetailsComponent {
   product : IProduct;
+  availableInventory = signal(3);
   
   constructor() {
     this.product = {
@@ -28,7 +30,8 @@ export class ProductDetailsComponent {
   }
 
   addToCart(product: IProduct, event: MouseEvent): void {
-    product.name += ' (Added to cart)';
+    setTimeout(() => this.availableInventory.set(2), 3000 );
+        product.name += ' (Added to cart)';
     console.log(event);
   }
 }
