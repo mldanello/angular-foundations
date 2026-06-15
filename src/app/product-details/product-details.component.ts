@@ -29,9 +29,8 @@ export class ProductDetailsComponent {
     return `/images/robot-parts/${product.imageName}`;
   }
 
-  addToCart(product: IProduct, event: MouseEvent): void {
-    setTimeout(() => this.availableInventory.update((p) => p - 1), 3000 );
-        product.name += ' (Added to cart)';
+  addToCart(event: MouseEvent): void {
+    setTimeout(() => this.availableInventory.update((p) => p - 1), 100 );
     console.log(event);
   }
 }
