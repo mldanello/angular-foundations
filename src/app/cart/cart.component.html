@@ -1,0 +1,8 @@
+<h1 class="header">Your Cart</h1>
+<ul class="cart">
+    @for (product of cartItems; track product.id) {
+    <li>
+        <bot-cart-item [product]="product"></bot-cart-item>
+    </li>
+    }
+</ul>

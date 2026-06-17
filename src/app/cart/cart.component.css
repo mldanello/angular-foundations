@@ -1,0 +1,20 @@
+:host {
+    display: flex;
+    flex-direction: column;
+    padding: 0 100px;
+}
+
+.header {
+    align-self: center;
+}
+
+.cart {
+    border-top: 2px solid #999;
+}
+
+.total {
+    margin: 25px 175px 0 0;
+    align-self: right;
+    font-size: 25px;
+    text-align:right;
+}
