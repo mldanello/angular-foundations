@@ -1,8 +1,5 @@
-.blue-border {
-  border: 3px solid blue;
-}
 
-.product {
+ :host {
   display: flex;
   justify-content: space-between;
   padding: 20px 25px;
@@ -14,7 +11,7 @@
   align-items: center;
 }
 
-.product img {
+:host img {
   width: 125px;
   margin-right: 25px;
 }
