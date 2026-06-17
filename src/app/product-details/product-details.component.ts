@@ -1,11 +1,11 @@
 import { Component, signal, input } from '@angular/core';
 import { IProduct } from '../product.model';
-import { CurrencyPipe } from '@angular/common';
+import { CurrencyPipe, NgClass } from '@angular/common';
 
 
 @Component({
   selector: 'bot-product-details',
-  imports: [CurrencyPipe],
+  imports: [CurrencyPipe, NgClass],
   templateUrl: './product-details.component.html',
   styleUrl: './product-details.component.css'
 })
@@ -16,6 +16,12 @@ export class ProductDetailsComponent {
   
   getImageUrl(product: IProduct): string {
     return `/images/robot-parts/${product.imageName}`;
+  }
+
+  getPriceClasses() {
+    return {
+      'strikethrough': this.product().discount > 0
+    };
   }
 
   addToCart(event: MouseEvent): void {
